@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="EN">
+	<head>
+		<meta charset="UTF-8">
+		<title> Image Gallery </title>
+		<link rel="stylesheet" href="style.css">
+		<script>
+			function init (){
+				var images = document.getElementsByTagName("img");
+				for (var i = 0; i < images.length; i++){
+					images[i].onclick = changeBigPicture;
+				}
+			}
+			function changeBigPicture(event){
+				var appDiv = document.getElementById("slider"),
+					big = document.getElementById("big_picture"),
+					left = document.createElement("img"),
+					right = document.createElement("img"),
+					eventElement = event.target,
+					imageDomElement = document.createElement("img");
+					
+				switch(eventElement.id){
+					case "left":
+						big.src = "img/" + (parseInt(big.src.substr(-5, 1)) - 1) + ".jpg";
+						appDiv.innerHTML = "";
+						left.id = "left";
+						left.src = "img/arrow.png";
+						right.id = "right";
+						right.src = "img/arrow.png";
+						appDiv.appendChild(left);
+						appDiv.appendChild(big);
+						
+						big.onerror = function() {
+							alert("Ошибка: Такого файла не существует");
+							big.src = "img/" + (parseInt(big.src.substr(-5, 1)) + 1) + ".jpg";
+							appDiv.innerHTML = "";
+							appDiv.appendChild(left);
+							appDiv.appendChild(big);
+							appDiv.appendChild(right);
+						}
+						
+						appDiv.appendChild(right);
+						
+						right.onload = init;
+						break;
+						
+					case "right":
+						big.src = "img/" + (parseInt(big.src.substr(-5, 1)) + 1) + ".jpg";
+						appDiv.innerHTML = "";
+						left.id = "left";
+						left.src = "img/arrow.png";
+						right.id = "right";
+						right.src = "img/arrow.png";
+						appDiv.appendChild(left);
+						appDiv.appendChild(big);
+						
+						big.onerror = function() {
+							alert("Ошибка: Такого файла не существует");
+							big.src = "img/" + (parseInt(big.src.substr(-5, 1)) - 1) + ".jpg";
+							appDiv.innerHTML = "";
+							appDiv.appendChild(left);
+							appDiv.appendChild(big);
+							appDiv.appendChild(right);
+						}
+						
+						appDiv.appendChild(right);
+						
+						right.onload = init;
+						break;
+						
+					default:
+						appDiv.innerHTML = "";
+						left.id = "left";
+						left.src = "img/arrow.png";
+						right.id = "right";
+						right.src = "img/arrow.png";
+						
+						imageDomElement.src = eventElement.src;
+						imageDomElement.id = "big_picture";
+						
+						appDiv.appendChild(left);
+						appDiv.appendChild(imageDomElement);
+						appDiv.appendChild(right);
+						
+						right.onload = init;
+						
+				}
+			}
+			window.onload = init;
+		</script>
+	</head>
+	<body>
+		
+		<div id="slider">
+		</div>
+		<div id="gallery">
+			<img src="img/1.jpg">
+			<img src="img/2.jpg">
+			<img src="img/3.jpg">
+			<img src="img/4.jpg">
+			<img src="img/5.jpg">
+		</div>
+		
+	</body>
+</html>

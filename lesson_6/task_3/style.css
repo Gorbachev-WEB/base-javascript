@@ -1,0 +1,33 @@
+div{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+#gallery{
+	flex-grow: 1;
+}
+
+#gallery img{
+	float: left;
+	height: 100px;
+	margin: 30px 10px;
+}
+
+#big_picture{
+	height: 600px;
+}
+
+#slider{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#right{
+	height: 50px;
+	transform: scale(-1, 1);
+}
+#left{
+	height: 50px;
+}

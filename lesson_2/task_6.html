@@ -1,0 +1,25 @@
+<script>
+	function mathOperation(arg1, arg2, operation){
+		switch (operation){
+			case 'сложение':
+				return (arg1+arg2);
+			case 'вычитание':
+				return (arg1-arg2);
+			case 'умножение':
+				return (arg1*arg2);
+			case 'деление':
+				return (arg1/arg2);
+			default:
+				return NaN;
+		}
+	}
+	var operation = prompt('Выберите операцию: Сложение/Вычитание/Умножение/Деление.');
+	var x = +prompt('Введите первое число: ');
+	var y = +prompt('Введите второе число: ');
+	if (isNaN(mathOperation(x, y, operation.toLowerCase()))){
+		alert('Ошибка! Перезагрузите страницу и попробуйте другие значения.')
+	}
+	else{
+		alert('Результат выбранной операции: '+mathOperation(x, y, operation.toLowerCase()))
+	}
+</script>

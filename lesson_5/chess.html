@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Шахматная доска</title>
+		<script>
+			var table = document.createElement('table');
+			
+		</script>
+		<style>
+			td{
+			  width: 100px;
+			  height: 100px;
+			  outline: 1px solid black;
+			}
+
+			table tr:nth-child(2n+1) td:nth-child(2n+1){
+			  background-color: black;
+			}
+			table tr:nth-child(2n+1) td:nth-child(2n){
+			  background-color: white;
+			}
+			table tr:nth-child(2n) td:nth-child(2n+1){
+			  background-color: white;
+			}
+			table tr:nth-child(2n) td:nth-child(2n){
+			  background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<table style="margin: 0 auto">
+		  <thead>
+			<th style="transform: rotate(180deg);"></th>
+			<th style="transform: rotate(180deg);">A</th>
+			<th style="transform: rotate(180deg);">B</th>
+			<th style="transform: rotate(180deg);">C</th>
+			<th style="transform: rotate(180deg);">D</th>
+			<th style="transform: rotate(180deg);">E</th>
+			<th style="transform: rotate(180deg);">F</th>
+			<th style="transform: rotate(180deg);">G</th>
+			<th style="transform: rotate(180deg);">H</th>
+			<th style="transform: rotate(180deg);"></th>
+		  </thead>
+		  <tr>
+			<th>8</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">8</th>
+		   </tr>
+		   <tr>
+			<th>7</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">7</th>
+		   </tr>
+		   <tr>
+			<th>6</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">6</th>
+		   </tr>
+		   <tr>
+			<th>5</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">5</th>
+		   </tr>
+		   <tr>
+			<th>4</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">4</th>
+		   </tr>
+		   <tr>
+			<th>3</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">3</th>
+		   </tr>
+		   <tr>
+			<th>2</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">2</th>
+		   </tr>
+		   <tr>
+			<th>1</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th style="transform: rotate(180deg);">1</th>
+		   </tr>
+		   <tfoot>
+			<th></th>
+			<th>A</th>
+			<th>B</th>
+			<th>C</th>
+			<th>D</th>
+			<th>E</th>
+			<th>F</th>
+			<th>G</th>
+			<th>H</th>
+			<th></th>
+		  </tfoot>
+		</table>
+	</body>
+</html>
